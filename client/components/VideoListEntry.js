@@ -4,8 +4,8 @@ var VideoListEntry = (props) => (
       <img className="media-object" src={props.datum.snippet.thumbnails.default.url} alt="" />
     </div>
     <div className="media-body">
-      <div className="video-list-entry-title">Video Title</div>
-      <div className="video-list-entry-detail">Video Description</div>
+      <div className="video-list-entry-title">{props.datum.snippet.title}</div>
+      <div className="video-list-entry-detail">{props.datum.snippet.description}</div>
     </div>
   </div>
 );
