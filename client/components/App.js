@@ -28,4 +28,4 @@ class App extends React.Component {
   }
 }
 
-ReactDOM.render(<App />, document.getElementById('app'));
+ReactDOM.render(<App api="YOUTUBE_API"/>, document.getElementById('app'));
