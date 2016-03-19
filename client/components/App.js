@@ -1,4 +1,11 @@
 class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      exampleVideoData: exampleVideoData,
+      currentVideo: exampleVideoData[0]
+    };
+  }
   render() {
     return (
     <div>
@@ -15,4 +22,6 @@ class App extends React.Component {
 }
 
 ReactDOM.render(<App />, document.getElementById('app'));
- 
+
+//fix import/export
+// export module App;
