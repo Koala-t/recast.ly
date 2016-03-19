@@ -22,6 +22,3 @@ class App extends React.Component {
 }
 
 ReactDOM.render(<App />, document.getElementById('app'));
-
-//fix import/export
-// export module App;
