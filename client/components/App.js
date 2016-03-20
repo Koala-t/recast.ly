@@ -12,6 +12,21 @@ class App extends React.Component {
   handleVideoListEntry(video) {
     this.setState({currentVideo: video});
   }
+
+  componentDidMount() {
+    var options = {
+      key: this.props.api,
+      query: '',
+      max: 8
+    };
+    
+    searchYouTube(options, videos =>
+      this.setState({
+        currentVideo: videos[0],
+        videos: videos
+      })
+    );
+  }
   
   render() {
     return (
