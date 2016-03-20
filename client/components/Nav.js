@@ -1,15 +1,9 @@
-class Nav extends React.Component {
-  constructor(props) {
-    super(props);
-  }  
-  render() {
-    return ( 
-      <nav className="navbar">
-        <div className="col-md-6 col-md-offset-3">
-          <Search />
-        </div>
-      </nav>
-    );
-  }
-}
+var Nav = (props) => (
+  <nav className="navbar">
+    <div className="col-md-6 col-md-offset-3">
+      <Search handleSearchEntry={props.handleSearchEntry}/>
+    </div>
+  </nav>
+);
+
 window.Nav = Nav;
