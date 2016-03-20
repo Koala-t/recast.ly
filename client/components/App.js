@@ -15,15 +15,16 @@ class App extends React.Component {
 
   componentDidMount() {
     var options = {
+      part: 'snippet',
       key: this.props.api,
-      query: '',
-      max: 8
+      q: 'san francisco fog',
+      maxResults: 8
     };
-    
+
     searchYouTube(options, videos =>
       this.setState({
         currentVideo: videos[0],
-        videos: videos
+        exampleVideoData: videos
       })
     );
   }
@@ -36,11 +37,11 @@ class App extends React.Component {
         <VideoPlayer startVideo={this.state.currentVideo} />
       </div>
       <div className="col-md-5">
-        <VideoList exampleVideoData={exampleVideoData} handleVideoListEntry={this.handleVideoListEntry.bind(this)} />
+        <VideoList exampleVideoData={this.state.exampleVideoData} handleVideoListEntry={this.handleVideoListEntry.bind(this)} />
       </div>
     </div>
     );
   }
 }
 
-ReactDOM.render(<App api="YOUTUBE_API"/>, document.getElementById('app'));
+ReactDOM.render(<App api={YOUTUBE_API_KEY}/>, document.getElementById('app'));
